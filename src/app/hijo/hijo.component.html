@@ -1,0 +1,23 @@
+<section>
+  <p>Soy el componente hijo</p>
+
+  <p>Este mensaje me llega desde el componente padre: {{ mensaje }}</p>
+
+  <button (click)="enviarMensaje()">Enviar mensaje al padre</button>
+
+  <section *ngIf="renderizado">
+    <div class="render" >Componente renderizado = {{num}}</div>
+  </section>
+  
+  <section class="cambio_estado">
+    <button class="estado" (click)="isAvailable = !isAvailable">Cambiar estado</button>
+    <div [ngClass]="isAvailable ? 'active-class' : 'deactivate-class'">Mi clase dinamica</div>
+  </section>
+  <button class="aparece" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">{{aparece}}</button>
+  <br>
+  <button class="clicar" (click)="click()">Click</button>
+
+ 
+</section>
+
+

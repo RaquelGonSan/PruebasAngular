@@ -1,0 +1,31 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+}
+th {
+    background-color: #f4f4f4;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.info_error{
+    color:rgb(180, 77, 8);
+}
+
+
+.busqueda{
+    padding: 5px;
+    margin-bottom: 12px;
+    border: 2px solid #005244;
+    border-radius: 7px;
+}

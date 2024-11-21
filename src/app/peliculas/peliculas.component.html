@@ -1,0 +1,14 @@
+<div class="container">
+    <h1 class="title-list">Mi lista de peliculas</h1>
+    <p class="info">Ejecutar json-server db.json --port 3000 para que nuestro archivo db.json sea accesible como una API</p>
+    <ul class="movie-grid">
+        <li class="movie-card" *ngFor="let pelicula of listaPeliculas" [routerLink]="['/peliculas', pelicula.id]">
+            <img src="{{pelicula.photo}}" alt="{{pelicula.name}}">
+            <h3 class="title">{{pelicula.name}}</h3>
+            <p class="nota">{{pelicula.nota}}</p>
+        </li>
+    </ul>
+<div>
+
+
+

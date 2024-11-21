@@ -1,0 +1,42 @@
+<h2>Lista de Usuarios</h2>
+
+<input class="busqueda" type="text" placeholder="Buscar Usuario" [(ngModel)]="nameSearch" (input)="buscarUsuario()" >
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Dirección</th>
+            <th>Teléfono</th>
+            <th>Sitio Web</th>
+            <th>Compañía</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of listaUsuariosMod ">
+            <td><fa-icon [icon]="icon_trash" class="icon_trash" (click) = "deleteUsuario(u.id)"></fa-icon></td>
+            <td><fa-icon [icon]="icon_star" class="icon_star" (click) = "addUsuarioFav(u.id)" [ngStyle]="{ color: isFavorite(u.id) ? 'rgb(238, 157, 6)' : 'grey' }"></fa-icon></td>
+            <td>{{u.id}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.email}}</td>
+            <td>{{u.address.city}} - {{u.address.street}} - {{u.address.zipcode}}</td>
+            <td>{{u.phone}}</td>
+            <td>{{u.website}}</td>
+            <td>{{u.company.name}} - {{u.company.bs}}</td>
+        </tr>
+        
+    </tbody>
+
+
+</table>
+
+
+<h3>Mis favoritos</h3>
+<ul *ngFor="let uf of listaUsuariosFav" >
+    <li>{{uf.name}} - {{uf.website}} - {{uf.company.name}}</li>
+
+</ul>
+<p class="info_error"></p>

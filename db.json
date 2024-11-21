@@ -1,0 +1,70 @@
+{
+    "peliculas": [
+        {
+            "id": 0,
+            "name": "Arcane",
+            "director": "Marc Merrill",
+            "nota": 10,
+            "photo": "https://sm.ign.com/t/ign_es/gallery/a/arcane-cha/arcane-character-posters_yrxw.1080.jpg"
+        },
+        {
+            "id": 1,
+            "name": "Orange is the new Black",
+            "director": "Santa Monica",
+            "nota": 8.5,
+            "photo": "https://es.web.img2.acsta.net/r_1280_720/pictures/18/10/30/17/53/3201060.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Friends",
+            "director": "James Burrows",
+            "nota": 7.5,
+            "photo": "https://www.lavanguardia.com/peliculas-series/images/movie/poster/2019/9/w780/vZZa4cFxK6DQtbaBuUeZoxaWNcq.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Thw Witcher",
+            "director": "Marc Jobst",
+            "nota": 3,
+            "photo": "https://pics.filmaffinity.com/the_witcher-737807462-mmed.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Love Death + Robots",
+            "director": "David Fincher",
+            "nota": 9,
+            "photo": "https://pics.filmaffinity.com/love_death_robots-192878001-mmed.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Juego de Tronos",
+            "director": "David Beniof",
+            "nota": 8.5,
+            "photo": "https://hips.hearstapps.com/hmg-prod/images/juego-de-tronos-primera-temporada-1558599291.jpg?resize=640:*"
+        },
+        {
+            "id": 6,
+            "name": "Los Anillos de Poder",
+            "director": "Juan Antonio Bayona",
+            "nota": 4,
+            "photo": "https://pics.filmaffinity.com/lord_of_the_rings_the_rings_of_power-159886546-mmed.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Peaky Blinders",
+            "director": "Tom Harper",
+            "nota": 9,
+            "photo": "https://www.formulatv.com/images/series/posters/1000/1079/dest_3.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Misfits",
+            "director": "Renny Harlin ",
+            "nota": 6.5,
+            "photo": "https://m.media-amazon.com/images/I/81DA+IWJ60L._SY445_.jpg"
+        }
+
+
+]
+
+}

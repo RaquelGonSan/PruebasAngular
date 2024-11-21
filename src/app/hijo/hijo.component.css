@@ -1,0 +1,32 @@
+section{
+    background-color: rgb(141, 209, 198);
+}
+
+.isAvailable{
+    display: block;
+
+}
+
+.deactivate-class{
+    display: none;
+}
+
+
+.estado{
+    padding: 10px;
+    font-size: 18px;
+    background-color: seagreen;
+}
+
+.aparece{
+    padding: 10px;
+    font-size: 18px;
+    background-color: rgb(214, 195, 19);
+
+}
+
+.clicar{
+    padding: 10px;
+    font-size: 18px;
+    background-color: rgb(137, 55, 204);
+}

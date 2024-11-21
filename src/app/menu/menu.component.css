@@ -1,0 +1,24 @@
+.menu {
+    display: flex;
+    list-style-type: none; 
+    background-color: #005244; 
+    padding: 10px 0;
+    margin: 0;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    color: white; 
+    text-decoration: none; 
+  
+    font-size: 15px;
+}
+
+
+.menu a:hover {
+    color: #ffa500; 
+    cursor: pointer;
+}
