@@ -1,0 +1,23 @@
+<h3>Lista de comentarios</h3>
+<h4>Añadir nuevo comentario</h4>
+<form (ngSubmit)="addComentario()">
+ <label for="id"  >Nombre:</label>
+    <input type="text" id="nombre" [(ngModel)]= "nuevoComentario.nombre" name = "nombre">
+
+    <label for ="email" >Email</label>
+    <input type="email" id="email" [(ngModel)] = "nuevoComentario.email" name = "email">
+
+    <label for="descripcion">Descripcion</label>
+    <input type="text" id="descripcion" [(ngModel)] = "nuevoComentario.body" name = "descripcion">
+
+    <button type="submit">Agregar</button>
+
+</form>
+
+<ul class="comentario_ul" *ngFor="let c of lista_comentarios | async" >
+    <li>{{c.id}} - {{c.name}}</li>
+    <p>{{c.body}}</p>
+</ul>
+
+
+

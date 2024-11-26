@@ -4,6 +4,7 @@ import { HijoComponent } from './hijo/hijo.component';
 import { PeliculasComponent } from './peliculas/peliculas.component';
 import { PeliculaDetalleComponent } from './pelicula-detalle/pelicula-detalle.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ComentariosComponent } from './comentarios/comentarios.component';
 
 
 export const routes: Routes = [
@@ -13,6 +14,7 @@ export const routes: Routes = [
     { path: 'peliculas', component: PeliculasComponent },
     { path: 'peliculas/:id', component: PeliculaDetalleComponent },
     { path: 'usuarios', component: UsuariosComponent},
+    { path: 'comentarios', component: ComentariosComponent},
     { path: '**', component: PadreComponent }, // una direccion inexisente -> siempre en ultimo lugar de las rutas
 ];
 
