@@ -1,7 +1,90 @@
-.comentario_ul{
-    border: 1px solid black;
+  .comentario_ul{
+      border: 1px solid black;
 
-}
-li{
-    padding: 5px;
-}
+  }
+  li{
+      padding: 5px;
+  }
+
+  .forms-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    align-items: stretch;
+  }
+
+
+  .form-container {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+  }
+
+  .form-container .form-button {
+    margin-top: auto; /* Empuja el botón al final del contenedor */
+    align-self: flex-end; /* Asegura que los botones estén alineados */
+
+
+  }
+
+
+  .form-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+  }
+
+  /* Input fields */
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 96%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: #005244;
+  }
+ 
+  /* Button styles */
+  .form-button {
+    width: 100%;
+    padding: 10px 15px;
+    background: #005244;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+  }
+
+  .form-button:hover {
+    background: #04b698;
+  }
