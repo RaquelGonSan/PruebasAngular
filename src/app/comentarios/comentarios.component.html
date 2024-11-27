@@ -1,19 +1,59 @@
 <h3>Lista de comentarios</h3>
-<h4>Añadir nuevo comentario</h4>
-<form (ngSubmit)="addComentario()">
- <label for="id"  >Nombre:</label>
-    <input type="text" id="nombre" [(ngModel)]= "nuevoComentario.nombre" name = "nombre">
+<div class="forms-container">
+    <div class="form-container"> 
+    <form (ngSubmit)="addComentario()">
+        <h4>Añadir nuevo comentario</h4>
+        <div class="form-group">
+            <label class="label" for="id"  >Nombre:</label>
+            <input type="text" id="nombre" [(ngModel)]= "nuevoComentario.nombre" name = "nombre">
+        </div>
+        <div class="form-group">
+            <label class="label" for ="email" >Email</label>
+            <input type="email" id="email" [(ngModel)] = "nuevoComentario.email" name = "email">
+        </div>
+        <div class="form-group">
+            <label class="label" for="descripcion">Descripcion</label>
+            <input type="text" id="descripcion" [(ngModel)] = "nuevoComentario.body" name = "descripcion">
+        </div>
+        <button type="submit" class="form-button">Agregar</button>
+    </form>
+    </div>
 
-    <label for ="email" >Email</label>
-    <input type="email" id="email" [(ngModel)] = "nuevoComentario.email" name = "email">
+    <div class="form-container">
+    <form (ngSubmit)="actualizarComentario()">
+        <h4>Actualizar comentario</h4>
+        <div class="form-group">
+            <label class="label" for="id"  >Id:</label>
+            <input type="text" id="id" [(ngModel)]= "comentarioActualizado.id" name = "id">
+        </div>
 
-    <label for="descripcion">Descripcion</label>
-    <input type="text" id="descripcion" [(ngModel)] = "nuevoComentario.body" name = "descripcion">
+        <div class="form-group">
+            <label class="label" for="nombre"  >Nombre:</label>
+            <input type="text" id="nombre" [(ngModel)]= "comentarioActualizado.nombre" name = "nombre">
+        </div>
 
-    <button type="submit">Agregar</button>
+        <div class="form-group">
+            <label class="label" for="descripcion">Descripcion</label>
+            <input type="text" id="descripcion" [(ngModel)] = "comentarioActualizado.body" name = "descripcion">
+        </div>
+        <button type="submit" class="form-button">Actualizar</button>
+    </form>
+    </div>
 
-</form>
+    <div class="form-container">
+        <form (ngSubmit)="borrarComentario()">
+            <h4>Borrar comentario</h4>
+            <div class="form-group">
+                <label class="label" for="id"  >Id:</label>
+                <input type="text" id="id" [(ngModel)]= "comentarioBorrado.id" name = "id">
+            </div>
+            <button type="submit" class="form-button">Borrar</button>
+        </form>
+    </div>
+</div>
 
+
+<p *ngIf="mensaje">{{ mensaje }}</p>
 <ul class="comentario_ul" *ngFor="let c of lista_comentarios | async" >
     <li>{{c.id}} - {{c.name}}</li>
     <p>{{c.body}}</p>

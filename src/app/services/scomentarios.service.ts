@@ -22,4 +22,15 @@ export class ScomentariosService {
     return this.http.post<IComentario>(this.baseurl, newComentario);
   }
 
+  updatedComentario(id:number, comentarioActualziado: any): Observable<IComentario>{
+    return this.http.put<IComentario>(`${this.baseurl}/${id}`, comentarioActualziado);
+  }
+
+  deleteComentario(id: number): Observable<IComentario>{
+    return this.http.delete<IComentario>(`${this.baseurl}/${id}`);
+  }
+
+
+
+
 }
