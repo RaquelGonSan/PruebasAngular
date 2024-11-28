@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { IComentario } from '../interfaces/icomentario';
 import { ScomentariosService } from '../services/scomentarios.service';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, map, Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -21,12 +21,27 @@ export class ComentariosComponent implements OnInit {
   mensaje = '';
   comentarioActualizado = {id: 0, nombre: '', email: '', body: ''};
   comentarioBorrado = {id: 0};
+  paginaActual$ = new BehaviorSubject<number>(1); // Página actual (reactiva)
+  comentariosPagina$!: Observable<any[]>;
+  comentariosPorPagina = 20;
+  totalPaginas = 0;
   constructor(){}
   ngOnInit(): void {
     this.getComentarios();
   }
  getComentarios(){
     this.lista_comentarios = this.comentariosService.getAllComentarios();
+
+     // Calcula las páginas y selecciona la lista correspondiente
+     this.comentariosPagina$ = combineLatest([this.lista_comentarios, this.paginaActual$]).pipe(
+      map(([comentarios, pagina]) => {
+        this.totalPaginas = Math.ceil(comentarios.length / this.comentariosPorPagina); // Calcula total de páginas
+        const inicio = (pagina - 1) * this.comentariosPorPagina;
+        const fin = inicio + this.comentariosPorPagina;
+        return comentarios.slice(inicio, fin); // Devuelve los comentarios de la página actual
+      })
+    );
+      
   }
   addComentario(){
     this.comentariosService.addComentario(this.nuevoComentario).subscribe({
@@ -67,6 +82,13 @@ export class ComentariosComponent implements OnInit {
         console.error('Error al borrar el item: ', err);
       }
     })
+  }
+
+
+  actualizarPagina(pagina: number): void {
+    if (pagina > 0 && pagina <= this.totalPaginas) {
+      this.paginaActual$.next(pagina); // Actualiza la página actual
+    }
   }
 
 

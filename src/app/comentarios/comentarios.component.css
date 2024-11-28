@@ -88,3 +88,30 @@
   .form-button:hover {
     background: #04b698;
   }
+
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .pagination-button {
+    padding: 8px 15px;
+    background-color: #005244;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pagination-button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .pagination-button:hover:not([disabled]) {
+    background-color: #04b698;
+  }
