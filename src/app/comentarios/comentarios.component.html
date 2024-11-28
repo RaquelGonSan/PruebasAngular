@@ -54,10 +54,28 @@
 
 
 <p *ngIf="mensaje">{{ mensaje }}</p>
-<ul class="comentario_ul" *ngFor="let c of lista_comentarios | async" >
+<ul class="comentario_ul" *ngFor="let c of comentariosPagina$ | async" >
     <li>{{c.id}} - {{c.name}}</li>
     <p>{{c.body}}</p>
 </ul>
+
+
+<!-- Controles de Paginación -->
+<div class="pagination" *ngIf="paginaActual$ | async as paginaActual">
+    <button 
+      class="pagination-button" 
+      (click)="actualizarPagina(paginaActual - 1)" 
+      [disabled]="paginaActual === 1">
+      Anterior
+    </button>
+    <span>Página {{ paginaActual }} de {{ totalPaginas }}</span>
+    <button 
+      class="pagination-button" 
+      (click)="actualizarPagina(paginaActual + 1)" 
+      [disabled]="paginaActual === totalPaginas">
+      Siguiente
+    </button>
+  </div>
 
 
 

@@ -13,7 +13,7 @@ export class ScomentariosService {
 
   constructor(private http: HttpClient) { }
 
-  getAllComentarios() {
+  getAllComentarios(): Observable<IComentario[]> {
     const data =  this.http.get<IComentario[]>(this.baseurl);
     return data;
   }
